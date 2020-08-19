@@ -12,5 +12,6 @@ RUN npm run build
 # RUN PHASE
 
 FROM nginx
+EXPOSE 80
 # REF: https://hub.docker.com/_/nginx
 COPY --from=builder ./app/build ./user/share/nginx/html
