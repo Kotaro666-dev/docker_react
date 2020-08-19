@@ -1,0 +1,10 @@
+language: generic
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t kotaro666/docker_react -f Dockerfile.dev .
+
+script:
+    - docker run kotaro666/docker_react npm run test -- --coverage
